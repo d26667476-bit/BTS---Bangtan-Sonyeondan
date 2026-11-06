@@ -1,0 +1,119 @@
+.voting-main {
+    width: min(100%, 1120px);
+    margin: 0 auto;
+    padding: 24px 6% 60px;
+}
+
+.voting-intro {
+    margin-bottom: 26px;
+    text-align: center;
+}
+
+.voting-intro h1 {
+    margin-bottom: 10px;
+    color: #ffffff;
+    font-size: clamp(2rem, 5vw, 2.8rem);
+}
+
+.voting-intro p {
+    color: #94a3b8;
+    line-height: 1.7;
+}
+
+.voting-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.voting-card {
+    display: block;
+    min-height: 170px;
+    color: #cbd5e1;
+    text-decoration: none;
+}
+
+.voting-card h2 {
+    margin-bottom: 10px;
+    color: #e9d5ff;
+    font-size: 1.25rem;
+}
+
+.voting-card p {
+    color: #94a3b8;
+    line-height: 1.65;
+}
+
+.voting-card .voting-card-link {
+    display: inline-block;
+    margin-top: 18px;
+    color: #e9d5ff;
+    font-weight: 700;
+}
+
+a.voting-card:hover .voting-card-link,
+a.voting-card:focus-visible .voting-card-link {
+    color: #ffffff;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+
+.voting-card:focus-visible,
+.voting-inline-link:focus-visible {
+    outline: 2px solid #c084fc;
+    outline-offset: 4px;
+    border-radius: 12px;
+}
+
+.voting-note {
+    grid-column: 1 / -1;
+    color: #cbd5e1;
+    line-height: 1.7;
+}
+
+.voting-note strong {
+    color: #e9d5ff;
+}
+
+.voting-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.voting-inline-link {
+    display: inline-block;
+    margin-top: 14px;
+    color: #e9d5ff;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.voting-inline-link:hover {
+    color: #ffffff;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.voting-back {
+    width: 100%;
+    margin-top: 26px;
+}
+
+@media (max-width: 700px) {
+    .voting-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .voting-note {
+        grid-column: auto;
+    }
+
+    .navbar {
+        align-items: flex-start;
+        gap: 16px;
+        flex-direction: column;
+    }
+}

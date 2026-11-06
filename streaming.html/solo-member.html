@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore a BTS member's solo streaming songs and playlist.">
+    <title>Solo Songs and Playlist | BTS Universe</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/streaming-goals.css">
+    <script src="streaming-goals.js" defer></script>
+</head>
+<body class="page-layout" data-streaming-page="member">
+    <nav class="navbar" aria-label="Main navigation">
+        <div class="brand-lockup">
+            <div class="logo">BTS <span>UNIVERSE</span></div>
+            <div class="brand-tagline">Seven Stars. One Universe. Infinite Stories.</div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../dashboard.html">Dashboard</a></li>
+            <li><a href="../streaming-goals.html" class="active" aria-current="page">Streaming Goals</a></li>
+        </ul>
+    </nav>
+    <header class="hero">
+        <h1 id="goal-heading">Solo Songs and Playlist</h1>
+        <p id="goal-description">Songs and playlist for the selected member.</p>
+    </header>
+    <main class="streaming-main">
+        <p id="goal-error" class="streaming-status" role="alert" hidden></p>
+        <section class="card milestone-detail" id="member-content">
+            <img id="member-milestone-image" class="member-milestone-image" alt="" hidden>
+            <h2>Songs</h2>
+            <ul class="member-song-list song-milestone-list" id="member-songs"></ul>
+            <p class="streaming-status" id="member-songs-status">Song titles will appear here when provided.</p>
+            <p class="streaming-status" id="member-songs-source" hidden>Stream totals from the <a href="https://kworb.net/spotify/artist/5vV3bFXnN6D6N3Nj4xRvaV_songs.html" target="_blank" rel="noopener noreferrer">Kworb Jin Spotify chart</a>.</p>
+            <section id="member-playlist-section">
+                <h2>Playlist</h2>
+                <p class="streaming-status" id="playlist-status">The direct playlist link will appear here when provided.</p>
+                <a class="streaming-card-link playlist-link" id="member-playlist" href="#" target="_blank" rel="noopener noreferrer" hidden>Open playlist <span aria-hidden="true">→</span></a>
+            </section>
+        </section>
+        <div class="page-back">
+            <a class="back-button" id="milestones-back" href="solo-members.html">← Back to members</a>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Choose a BTS member to explore solo streaming goals.">
+    <title>Choose a Member | BTS Universe</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/streaming-goals.css">
+    <script src="streaming-goals.js" defer></script>
+</head>
+<body class="page-layout" data-streaming-page="members">
+    <nav class="navbar" aria-label="Main navigation">
+        <div class="brand-lockup">
+            <div class="logo">BTS <span>UNIVERSE</span></div>
+            <div class="brand-tagline">Seven Stars. One Universe. Infinite Stories.</div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../dashboard.html">Dashboard</a></li>
+            <li><a href="../streaming-goals.html" class="active" aria-current="page">Streaming Goals</a></li>
+        </ul>
+    </nav>
+    <header class="hero">
+        <h1 id="goal-heading">Choose a BTS Member</h1>
+        <p id="goal-description">Select a member to explore their solo streaming goals.</p>
+    </header>
+    <main class="streaming-main">
+        <p id="goal-error" class="streaming-status" role="alert" hidden></p>
+        <section class="streaming-grid member-grid" aria-label="BTS members">
+            <a class="card member-streaming-card" data-member="jin" href="solo-member.html?member=jin">
+                <img src="../assets/jin.jpg" alt="">
+                <div><h2>Jin</h2><span class="streaming-card-link">View songs and playlists →</span></div>
+            </a>
+            <a class="card member-streaming-card" data-member="suga" href="solo-member.html?member=suga">
+                <img src="../assets/suga.jpg" alt="">
+                <div><h2>SUGA</h2><span class="streaming-card-link">View songs and playlists →</span></div>
+            </a>
+            <a class="card member-streaming-card" data-member="jhope" href="solo-member.html?member=jhope">
+                <img src="../assets/jhope.jpg" alt="">
+                <div><h2>j-hope</h2><span class="streaming-card-link">View songs and playlists →</span></div>
+            </a>
+            <a class="card member-streaming-card" data-member="rm" href="solo-member.html?member=rm">
+                <img src="../assets/rm.jpg" alt="">
+                <div><h2>RM</h2><span class="streaming-card-link">View songs and playlists →</span></div>
+            </a>
+            <a class="card member-streaming-card" data-member="jimin" href="solo-member.html?member=jimin">
+                <img src="../assets/jimin.jpg" alt="">
+                <div><h2>Jimin</h2><span class="streaming-card-link">View songs and playlists →</span></div>
+            </a>
+            <a class="card member-streaming-card" data-member="v" href="solo-member.html?member=v">
+                <img src="../assets/taehyung.jpg" alt="">
+                <div><h2>V</h2><span class="streaming-card-link">View songs and playlists →</span></div>
+            </a>
+            <a class="card member-streaming-card" data-member="jungkook" href="solo-member.html?member=jungkook">
+                <img src="../assets/jumgkook.jpg" alt="">
+                <div><h2>Jungkook</h2><span class="streaming-card-link">View songs and playlists →</span></div>
+            </a>
+        </section>
+        <div class="page-back">
+            <a class="back-button" id="milestones-back" href="options.html">← Back to goal options</a>
+        </div>
+    </main>
+</body>
+</html>

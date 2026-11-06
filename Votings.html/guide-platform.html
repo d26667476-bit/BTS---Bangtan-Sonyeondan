@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Voting platform guide for BTS fans.">
+    <title>Voting Platform Guide | BTS Universe</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="voting.css">
+</head>
+<body class="page-layout">
+    <nav class="navbar" aria-label="Main navigation">
+        <div class="brand-lockup">
+            <div class="logo">BTS <span>UNIVERSE</span></div>
+            <div class="brand-tagline">Seven Stars. One Universe. Infinite Stories.</div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../dashboard.html">Dashboard</a></li>
+            <li><a href="index.html">Voting</a></li>
+            <li><a href="guide.html" class="active" aria-current="page">Voting Guide</a></li>
+            <li><a href="updates.html">Voting Updates</a></li>
+        </ul>
+    </nav>
+    <header class="hero">
+        <h1 id="platform-title">Voting Platform Guide</h1>
+        <p>Platform instructions will be added here.</p>
+    </header>
+    <main class="voting-main">
+        <section class="voting-grid" aria-label="Platform guide">
+            <article class="card voting-note">
+                <strong id="platform-heading">Platform guide</strong>
+                <p id="platform-guide-content">Instructions for this platform will be added later.</p>
+                <p id="platform-site"></p>
+            </article>
+        </section>
+        <div class="voting-actions">
+            <a class="voting-inline-link" href="guide.html">← Back to all voting platforms</a>
+            <a class="voting-inline-link" href="updates.html">Browse voting updates →</a>
+        </div>
+        <div class="page-back">
+            <a class="back-button" href="../dashboard.html">← Back to Dashboard</a>
+        </div>
+    </main>
+    <script>
+        const platforms = {
+            "mnet-plus": {
+                name: "Mnet Plus",
+                url: "https://www.mnetplus.world/"
+            },
+            "aria": {
+                name: "ARIA"
+            },
+            "mubeat": {
+                name: "Mubeat",
+                url: "https://www.mubeat.tv/"
+            },
+            "idol-champ": {
+                name: "Idol Champ",
+                url: "https://idolchamp.com/"
+            },
+            "star-planet": {
+                name: "Star Planet",
+                url: "https://www.starplanet.co.kr/"
+            },
+            "fancast": {
+                name: "Fancast",
+                url: "https://fancast.io/"
+            },
+            "whosfan": {
+                name: "Whosfan",
+                url: "https://www.whosfan.com/"
+            },
+            "podoal": {
+                name: "Podoal",
+                url: "https://www.podoal.io/"
+            }
+        };
+        const app = new URLSearchParams(window.location.search).get("app");
+        const platform = app ? platforms[app] : undefined;
+        const title = document.getElementById("platform-title");
+        const heading = document.getElementById("platform-heading");
+        const site = document.getElementById("platform-site");
+
+        if (platform) {
+            document.title = platform.name + " Guide | BTS Universe";
+            title.textContent = platform.name + " Guide";
+            heading.textContent = platform.name + " guide";
+            if (platform.url) {
+                const link = document.createElement("a");
+                link.className = "voting-inline-link";
+                link.href = platform.url;
+                link.target = "_blank";
+                link.rel = "noopener noreferrer";
+                link.textContent = "Visit the official " + platform.name + " website ↗";
+                site.appendChild(link);
+            }
+        } else {
+            title.textContent = "Platform Not Found";
+            heading.textContent = "Platform not found";
+            document.getElementById("platform-guide-content").textContent =
+                "Choose a platform from the Voting Guide page.";
+        }
+    </script>
+</body>
+</html>

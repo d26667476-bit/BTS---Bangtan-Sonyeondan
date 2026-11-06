@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A welcoming space for ARMY to support BTS with love, responsibility, and respect.">
+    <title>BTS Universe Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .dashboard-nav {
+            gap: 24px;
+        }
+
+        .dashboard-main {
+            padding: 0 0 60px;
+        }
+
+        .group-banner {
+            display: block;
+            width: 100%;
+            height: clamp(240px, 42vw, 540px);
+            object-fit: cover;
+            object-position: center 42%;
+            border-top: 1px solid rgba(192, 132, 252, 0.25);
+            border-bottom: 1px solid rgba(192, 132, 252, 0.25);
+        }
+
+        .welcome-section {
+            width: 100%;
+            margin: 0;
+            padding: 44px 0 0;
+        }
+
+        .welcome-content {
+            display: grid;
+            gap: 26px;
+            width: 100%;
+        }
+
+        .welcome-note {
+            width: 100%;
+            padding: clamp(28px, 5vw, 56px) 8%;
+            border-right: 0;
+            border-left: 0;
+            border-radius: 0;
+        }
+
+        .welcome-note h2 {
+            margin-bottom: 20px;
+            color: #ffffff;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 800;
+            letter-spacing: 0.02em;
+        }
+
+        .welcome-mark {
+            color: #c084fc;
+            font-weight: 900;
+        }
+
+        .welcome-note p {
+            max-width: 1100px;
+            margin: 0 auto 16px 0;
+            color: #cbd5e1;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .welcome-note p:last-child {
+            margin-bottom: 0;
+        }
+
+        .memorial-note {
+            display: block;
+            color: inherit;
+            text-decoration: none;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .memorial-note:hover,
+        .memorial-note:focus-visible {
+            border-color: rgba(192, 132, 252, 0.55);
+            box-shadow: 0 20px 45px rgba(124, 58, 237, 0.2);
+        }
+
+        .memorial-note:focus-visible {
+            outline: 2px solid #c084fc;
+            outline-offset: 4px;
+        }
+
+        .memorial-note .memorial-link {
+            color: #e9d5ff;
+            font-weight: 700;
+        }
+
+        .welcome-signoff {
+            color: #e9d5ff !important;
+        }
+
+        .achievement-feature {
+            width: 100%;
+            padding: clamp(26px, 5vw, 44px);
+            text-align: center;
+        }
+
+        .achievement-feature h2 {
+            color: #ffffff;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 800;
+        }
+
+        .achievement-feature p {
+            margin: 10px 0 22px;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        .achievement-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #e9d5ff;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .achievement-link:hover,
+        .achievement-link:focus-visible {
+            color: #ffffff;
+            text-decoration: underline;
+            text-underline-offset: 5px;
+        }
+
+        .achievement-link:focus-visible {
+            outline: 2px solid #c084fc;
+            outline-offset: 5px;
+            border-radius: 2px;
+        }
+
+        .member-feature {
+            width: 100%;
+            padding: clamp(26px, 5vw, 44px);
+            text-align: center;
+        }
+
+        .member-feature h2 {
+            color: #ffffff;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 800;
+        }
+
+        .member-feature p {
+            margin: 10px 0 22px;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        .dashboard-feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 26px;
+            width: min(100%, 1100px);
+            margin: 0 auto;
+            padding: 0 6%;
+        }
+
+        @media (max-width: 700px) {
+            .navbar.dashboard-nav {
+                align-items: center;
+                flex-direction: row;
+                gap: 12px;
+                padding: 14px 5%;
+            }
+
+            .dashboard-nav .brand-tagline {
+                max-width: 230px;
+                font-size: 0.62rem;
+            }
+
+            .dashboard-nav .nav-links li a {
+                padding: 8px 10px;
+                font-size: 0.8rem;
+            }
+
+            .welcome-section {
+                padding-top: 34px;
+            }
+
+            .welcome-note {
+                padding-right: 6%;
+                padding-left: 6%;
+            }
+
+            .dashboard-feature-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+                padding: 0 5%;
+            }
+
+        }
+
+        @media (max-width: 420px) {
+            .navbar.dashboard-nav {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body class="page-layout">
+    <nav class="navbar dashboard-nav" aria-label="Main navigation">
+        <div class="brand-lockup">
+            <div class="logo">BTS <span>UNIVERSE</span></div>
+            <div class="brand-tagline">Seven Stars. One Universe. Infinite Stories.</div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="dashboard.html" class="active" aria-current="page">Dashboard</a></li>
+        </ul>
+    </nav>
+
+    <main class="dashboard-main">
+        <img class="group-banner" src="assets/bts%20group%20photo.jpg" alt="BTS together">
+
+        <section class="welcome-section" aria-label="Welcome to BTS Universe">
+            <div class="welcome-content">
+                <article class="card welcome-note">
+                    <h2><span class="welcome-mark" aria-hidden="true">|</span> WELCOME, ARMY!</h2>
+                    <p>Welcome to BTS Universe, a space created by an ARMY, for ARMY. Here, you can explore the seven members' profiles, discover their music and achievements, follow voting and streaming updates, and find resources to help protect our seven.</p>
+                    <p>This universe is built on our love for BTS, the truth we stand for, and the bond that brings ARMY together. Let's continue supporting our seven with love, unity, and respect.</p>
+                    <p>Seven Members. One Universe. Infinite Stories.</p>
+                    <p class="welcome-signoff">With love,<br>Queen Zyra × Lady Erebus on YouTube</p>
+                </article>
+
+                <div class="dashboard-feature-grid">
+                    <section class="card member-feature" aria-labelledby="member-feature-title">
+                        <h2 id="member-feature-title">MEET THE SEVEN STARS</h2>
+                        <p>Get to know the seven members of BTS</p>
+                        <a class="achievement-link" href="members2.html">Explore the Stars <span aria-hidden="true">→</span></a>
+                    </section>
+
+                    <section class="card achievement-feature" aria-labelledby="achievement-feature-title">
+                        <h2 id="achievement-feature-title">Achievements in 13 Years</h2>
+                        <p>Through hard work</p>
+                        <a class="achievement-link" href="achievements.html">Explore Achievements <span aria-hidden="true">→</span></a>
+                    </section>
+
+                    <section class="card achievement-feature" aria-labelledby="voting-feature-title">
+                        <h2 id="voting-feature-title">BTS Voting</h2>
+                        <p>Find voting guides and platform updates</p>
+                        <a class="achievement-link" href="Votings.html/index.html">Explore Voting <span aria-hidden="true">→</span></a>
+                    </section>
+
+                    <section class="card achievement-feature" aria-labelledby="truth-feature-title">
+                        <h2 id="truth-feature-title">The Truth Archive</h2>
+                        <p>Review claims, verified context, and supporting sources.</p>
+                        <a class="achievement-link" href="truth.html/index.html">Explore The Truth Archive <span aria-hidden="true">→</span></a>
+                    </section>
+
+                    <section class="card achievement-feature" aria-labelledby="streaming-feature-title">
+                        <h2 id="streaming-feature-title">BTS Streaming Goals</h2>
+                        <p>Choose a YouTube or Spotify milestone, then explore Seven Souls or Solo Frequency.</p>
+                        <a class="achievement-link" href="streaming-goals.html">Explore Streaming Goals <span aria-hidden="true">→</span></a>
+                    </section>
+
+                    <section class="card achievement-feature" aria-labelledby="protect-feature-title">
+                        <h2 id="protect-feature-title">Protect Angels</h2>
+                        <p>Simple guidance for reporting threats and helping protect BTS members.</p>
+                        <a class="achievement-link" href="protect.html/index.html">Open Protect Angels <span aria-hidden="true">→</span></a>
+                    </section>
+                </div>
+
+                <a class="card welcome-note memorial-note" href="peace.html/index.html" aria-labelledby="memorial-note-title">
+                    <h2 id="memorial-note-title"><span class="welcome-mark" aria-hidden="true">|</span> A LITTLE NOTE FROM QUEEN ZYRA</h2>
+                    <p>Honestly, I don't know how many of you would be interested in reading about ARMYs who are no longer with us, but I believe they deserve a place in this universe, too, don't they?</p>
+                    <p>They were people who had their own lives, their own stories, and their own dreams. Some of them dreamed of meeting BTS someday, of seeing all seven members with their own eyes, and of telling them what their music meant to them. Sadly, not everyone gets the chance to fulfil every dream they carry.</p>
+                    <p>That's why I created this little corner, "Until We Meet in Another Purple Universe." A place to remember those ARMYs, honour their stories, and give their memories a space in the universe they loved.</p>
+                    <p>Because even though they are no longer here with us, their lives mattered, their dreams mattered, and their stories deserve to be remembered with kindness.</p>
+                    <p>They were ARMY, too. And they deserve a place in our purple universe.</p>
+                    <p class="memorial-link">Visit Until We Meet in Another Purple Universe <span aria-hidden="true">→</span></p>
+                </a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

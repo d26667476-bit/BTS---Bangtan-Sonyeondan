@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore BTS group and solo awards by year.">
+    <title>Awards | BTS Universe</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/archive.css">
+</head>
+<body class="page-layout">
+    <nav class="navbar" aria-label="Main navigation">
+        <div class="brand-lockup">
+            <div class="logo">BTS <span>UNIVERSE</span></div>
+            <div class="brand-tagline">Seven Stars. One Universe. Infinite Stories.</div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../../dashboard.html">Dashboard</a></li>
+        </ul>
+    </nav>
+    <header class="hero">
+        <h1>Awards</h1>
+        <p>Choose group or solo awards, then select a year.</p>
+    </header>
+    <main class="archive-main">
+        <div class="archive-grid" aria-label="Award categories">
+            <a class="card archive-choice" href="group/index.html">
+                <h2>Group Awards</h2>
+                <p>Explore BTS group awards by year.</p>
+            </a>
+            <a class="card archive-choice" href="solo/index.html">
+                <h2>Solo Awards</h2>
+                <p>Explore the members’ solo awards by year.</p>
+            </a>
+        </div>
+    </main>
+    <div class="page-back">
+        <a class="back-button" href="../../achievements.html" data-back-button aria-label="Go back to the previous page">← Back</a>
+    </div>
+    <script>
+        document.querySelector('[data-back-button]').addEventListener('click', (event) => {
+            if (window.history.length > 1) {
+                event.preventDefault();
+                window.history.back();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Official-source voting updates for BTS voting platforms.">
+    <title>Platform Updates | BTS Universe</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="voting.css">
+</head>
+<body class="page-layout">
+    <nav class="navbar" aria-label="Main navigation">
+        <div class="brand-lockup">
+            <div class="logo">BTS <span>UNIVERSE</span></div>
+            <div class="brand-tagline">Seven Stars. One Universe. Infinite Stories.</div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../dashboard.html">Dashboard</a></li>
+            <li><a href="index.html">Voting</a></li>
+            <li><a href="updates.html" class="active" aria-current="page">Voting Updates</a></li>
+        </ul>
+    </nav>
+    <header class="hero">
+        <h1 id="platform-title">Platform Updates</h1>
+        <p>Use the platform's official channels to verify live voting information.</p>
+    </header>
+    <main class="voting-main">
+        <section class="voting-grid" aria-label="Voting platform update">
+            <article class="card voting-note">
+                <p id="platform-site"></p>
+                <p id="platform-motivation"></p>
+            </article>
+        </section>
+        <div class="voting-actions">
+            <a class="voting-inline-link" href="guide.html">Browse all voting platforms →</a>
+            <a class="voting-inline-link" href="updates.html">Back to Voting Updates →</a>
+        </div>
+        <div class="page-back">
+            <a class="back-button" href="../dashboard.html">← Back to Dashboard</a>
+        </div>
+    </main>
+    <script>
+        const platforms = {
+            "mnet-plus": {
+                name: "Mnet Plus",
+                motivation: "ARMY, every vote brings BTS closer to the win. Head to Mnet Plus and let’s help our seven shine!",
+                url: "https://www.mnetplus.world/"
+            },
+            "aria": {
+                name: "ARIA",
+                motivation: "Our angels deserve the brightest spotlight—cast your ARIA vote for BTS and let’s win this together!",
+                url: "https://www.aria.com.au/vote"
+            },
+            "mubeat": {
+                name: "Mubeat",
+                motivation: "ARMY, open Mubeat and vote for BTS! Every vote is a little more love leading our boys to victory.",
+                url: "https://www.mubeat.tv/"
+            },
+            "idol-champ": {
+                name: "Idol Champ",
+                motivation: "Let’s make this win unforgettable—vote for BTS on Idol Champ and show them ARMY is always here!",
+                url: "https://idolchamp.com/"
+            },
+            "star-planet": {
+                name: "Star Planet",
+                motivation: "The stars are waiting for ARMY—vote for BTS on Star Planet and help them reach number one!",
+                url: "https://www.starplanet.co.kr/"
+            },
+            "fancast": {
+                name: "Fancast",
+                motivation: "Your support can make the difference. Head to Fancast, vote for BTS, and let’s bring home the win!",
+                url: "https://fancast.io/"
+            },
+            "whosfan": {
+                name: "Whosfan",
+                motivation: "ARMY, let’s make our voices count on Whosfan—vote for BTS and cheer our seven all the way!",
+                url: "https://www.whosfan.com/"
+            },
+            "podoal": {
+                name: "Podoal",
+                motivation: "A vote from you means the world to BTS—open Podoal and help our angels win!",
+                url: "https://www.podoal.io/"
+            }
+        };
+        const app = new URLSearchParams(window.location.search).get("app");
+        const platform = app ? platforms[app] : undefined;
+        const title = document.getElementById("platform-title");
+        const site = document.getElementById("platform-site");
+        const motivation = document.getElementById("platform-motivation");
+
+        if (platform) {
+            document.title = platform.name + " Updates | BTS Universe";
+            title.textContent = platform.name + " Updates";
+            motivation.textContent = platform.motivation;
+            if (platform.url) {
+                const link = document.createElement("a");
+                link.className = "voting-inline-link";
+                link.href = platform.url;
+                link.target = "_blank";
+                link.rel = "noopener noreferrer";
+                link.textContent = "Here’s the official " + platform.name + " website ↗";
+                site.appendChild(link);
+            }
+        } else {
+            title.textContent = "Platform Not Found";
+            motivation.textContent = "Choose a voting platform from the Voting Updates page.";
+        }
+    </script>
+</body>
+</html>

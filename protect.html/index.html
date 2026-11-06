@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Simple, responsible guidance for reporting threats against BTS members.">
+    <title>Protect Angels | BTS Universe</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .protect-content {
+            width: min(100% - 12%, 1000px);
+            margin: 0 auto;
+            padding-bottom: 48px;
+        }
+
+        .guide-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        .guide-card h2 {
+            margin-bottom: 12px;
+            color: #fff;
+        }
+
+        .guide-card p {
+            margin-bottom: 20px;
+            color: #cbd5e1;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 650px) {
+            .guide-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="page-layout">
+    <nav class="navbar" aria-label="Main navigation">
+        <div class="brand-lockup">
+            <div class="logo">BTS <span>UNIVERSE</span></div>
+            <div class="brand-tagline">Seven Stars. One Universe. Infinite Stories.</div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../dashboard.html">Dashboard</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <h1>Protect Angels</h1>
+        <p>Stay calm, save the evidence, and report real threats through the right channels.</p>
+    </header>
+
+    <main class="protect-content">
+        <section class="guide-grid" aria-label="Protection guides">
+            <article class="card guide-card">
+                <h2>HYBE Portal Instructions</h2>
+                <p>Learn how to send a clear report to HYBE’s artist protection portal and what information to include.</p>
+                <a class="achievement-link" href="hybe-protection.html">Read portal instructions <span aria-hidden="true">→</span></a>
+            </article>
+            <article class="card guide-card">
+                <h2>Threats to Report</h2>
+                <p>See what kinds of violence, stalking, and safety threats should be reported—and what to do if danger is immediate.</p>
+                <a class="achievement-link" href="threats-to-report.html">See what to report <span aria-hidden="true">→</span></a>
+            </article>
+        </section>
+        <div class="page-back">
+            <a class="back-button" href="../dashboard.html">← Back to Dashboard</a>
+        </div>
+    </main>
+</body>
+</html>

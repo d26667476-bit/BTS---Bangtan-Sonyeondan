@@ -1,0 +1,244 @@
+/* ==========================================================================
+   FUTURISTIC BLACK & PURPLE ENTERPRISE GLASS DASHBOARD MASTER FRAMEWORK
+   ========================================================================== */
+@import url('https://googleapis.com');
+
+/* GLOBAL SYSTEM RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* MASTER THEME BACKGROUND: Pitch Black with Neon Purple Cosmic Ambient Gradients */
+body {
+    background-color: #030106; /* Ultra-deep rich charcoal black */
+    background-image: 
+        radial-gradient(circle at 85% 15%, rgba(139, 92, 246, 0.15) 0%, transparent 45%),
+        radial-gradient(circle at 15% 80%, rgba(167, 139, 250, 0.12) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(91, 33, 182, 0.04) 0%, transparent 70%);
+    background-attachment: fixed;
+    color: #cbd5e1;
+    padding-bottom: 60px;
+}
+
+/* HIGH-TECH GLOWING COMMAND BAR NAVIGATION */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 6%;
+    background: rgba(6, 4, 14, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(139, 92, 246, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.logo {
+    font-size: 1.35rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: #ffffff;
+}
+.logo span {
+    color: #c084fc;
+    text-shadow: 0 0 15px rgba(192, 132, 252, 0.6);
+}
+.brand-lockup {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+.brand-tagline {
+    color: #94a3b8;
+    font-size: 0.68rem;
+    letter-spacing: 0.35px;
+}
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 8px;
+}
+.nav-links li a {
+    color: #94a3b8;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.nav-links li a:hover, .nav-links li a.active {
+    color: #ffffff;
+    background: rgba(139, 92, 246, 0.12);
+    box-shadow: inset 0 0 12px rgba(167, 139, 250, 0.08);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+}
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    border-radius: 8px;
+    padding: 8px 14px;
+    background: rgba(139, 92, 246, 0.12);
+    color: #e9d5ff;
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+.page-back {
+    width: 100%;
+    margin: auto 0 0;
+    padding: 20px 0 0;
+}
+.page-layout {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    padding-bottom: 0;
+}
+.page-layout > main {
+    flex: 1;
+}
+.back-button:hover, .back-button:focus-visible {
+    background: rgba(139, 92, 246, 0.22);
+    outline: 2px solid #c084fc;
+    outline-offset: 2px;
+}
+/* HERO PANEL WRAPPER CONSOLE */
+.hero {
+    padding: 45px 6% 25px 6%;
+    text-align: center; /* Centered layout to align perfectly with the graphic logo */
+    max-width: 1400px;
+    margin: 0 auto;
+}
+.hero h1 {
+    font-size: 2.6rem;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.5px;
+    margin-top: 15px;
+}
+.hero p {
+    font-size: 1.05rem;
+    color: #94a3b8;
+    margin-top: 5px;
+}
+.hero-banner-image {
+    display: block;
+    width: 100vw;
+    max-width: none;
+    height: auto;
+    margin: 25px calc(50% - 50vw);
+}
+
+/* MASTER RESPONSIVE COMPONENT MATRIX GRID */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+    padding: 0 6%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* TRANSLUCENT FROSTED GLASS PANELS */
+.card {
+    background: rgba(11, 7, 23, 0.45);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(139, 92, 246, 0.12);
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card:hover {
+    border-color: rgba(167, 139, 250, 0.35);
+    box-shadow: 0 25px 50px rgba(124, 58, 237, 0.15);
+    transform: translateY(-2px);
+}
+
+/* WIKI PROFILE SUMMARY MODULE DATA INTERFACES */
+.wiki-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 5px;
+}
+.wiki-table tr {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+.wiki-table tr:last-child {
+    border-bottom: none;
+}
+.wiki-table td {
+    padding: 13px 0;
+    font-size: 0.9rem;
+    color: #cbd5e1;
+}
+.wiki-table td:first-child {
+    color: #94a3b8;
+    font-weight: 500;
+    width: 38%;
+}
+.wiki-table td strong {
+    color: #c084fc;
+}
+
+/* ==========================================================================
+   OFFICIAL INTEGRATED LOGO MATRIX (COMPACT INTERLOCKING SYSTEM)
+   ========================================================================== */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 36px; /* Spacing BETWEEN the complete BTS shield and complete ARMY shield */
+    margin: 25px auto;
+}
+
+/* Structural wrapper holding the left & right pieces tightly together */
+.shield {
+    display: flex;
+    gap: 2px; /* Pulls the left and right panels right next to each other */
+}
+
+/* Individual narrow panel dimensions */
+.emblem {
+    width: 22px;       /* Sleek narrow width matching reference */
+    height: 76px;      /* Extended vertical height matching reference */
+    background: linear-gradient(180deg, #c084fc 0%, #7c3aed 100%); 
+    filter: drop-shadow(0 0 12px rgba(192, 132, 252, 0.5));
+    transition: transform 0.3s ease;
+}
+
+/* 
+   --- OFFICIAL BTS SHIELD GEOMETRY ---
+   Real Look: Trapezoids narrowing tightly at the top center, wider at the base.
+*/
+.bts-left {
+    clip-path: polygon(0 14%, 100% 0, 100% 100%, 0 86%);
+}
+.bts-right {
+    clip-path: polygon(0 0, 100% 14%, 100% 86%, 0 100%);
+}
+
+/* 
+   --- OFFICIAL ARMY SHIELD GEOMETRY ---
+   Real Look: Trapezoids pointing out like a sharp roof at the top, narrowing at the base.
+*/
+.army-left {
+    clip-path: polygon(100% 14%, 0 0, 0 100%, 100% 86%);
+    background: linear-gradient(180deg, #d8b4fe 0%, #8b5cf6 100%); 
+}
+.army-right {
+    clip-path: polygon(0 14%, 100% 0, 100% 100%, 0 86%);
+    background: linear-gradient(180deg, #d8b4fe 0%, #8b5cf6 100%);
+}
+      

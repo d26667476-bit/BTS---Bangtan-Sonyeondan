@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore BTS awards, albums, OT7 milestones, and members' solo music.">
+    <title>BTS Achievements &amp; Archives</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .achievement-main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 24px 6% 60px;
+        }
+        .achievement-intro {
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .achievement-intro p {
+            color: #94a3b8;
+            line-height: 1.6;
+        }
+        .achievement-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            align-items: start;
+            gap: 24px;
+        }
+        .achievement-panel {
+            overflow: hidden;
+            padding: 0;
+        }
+        .achievement-panel-summary {
+            cursor: pointer;
+            list-style: none;
+            padding: 22px 26px;
+            color: #ffffff;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+        .achievement-panel-summary::-webkit-details-marker {
+            display: none;
+        }
+        .achievement-panel-summary::after {
+            content: "+";
+            float: right;
+            color: #c084fc;
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+        .achievement-panel[open] > .achievement-panel-summary::after {
+            content: "−";
+        }
+        .achievement-panel-summary:focus-visible {
+            outline: 2px solid #c084fc;
+            outline-offset: -4px;
+        }
+        .achievement-panel-content {
+            border-top: 1px solid rgba(139, 92, 246, 0.2);
+            padding: 22px;
+        }
+        .achievement-panel-content > .metric-sub {
+            margin-bottom: 14px;
+            color: #94a3b8;
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+        .achievement-category > summary,
+        .achievement-year > summary {
+            cursor: pointer;
+            list-style: none;
+        }
+        .achievement-category > summary::-webkit-details-marker,
+        .achievement-year > summary::-webkit-details-marker {
+            display: none;
+        }
+        .achievement-category > summary::after,
+        .achievement-year > summary::after {
+            content: "+";
+            float: right;
+            color: #c084fc;
+        }
+        .achievement-category[open] > summary::after,
+        .achievement-year[open] > summary::after {
+            content: "−";
+        }
+        .achievement-category > summary:focus-visible,
+        .achievement-year > summary:focus-visible {
+            outline: 2px solid #c084fc;
+            outline-offset: 4px;
+            border-radius: 2px;
+        }
+        .achievement-category {
+            margin-top: 14px;
+        }
+        .achievement-category > summary {
+            color: #e9d5ff;
+            font-size: 0.95rem;
+            font-weight: 700;
+        }
+        .achievement-years {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .achievement-year {
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            border-radius: 10px;
+            background: rgba(139, 92, 246, 0.07);
+        }
+        .achievement-year > summary {
+            padding: 12px;
+            color: #e9d5ff;
+            font-weight: 700;
+        }
+        .achievement-year-content {
+            padding: 0 12px 12px;
+        }
+        .achievement-year-content p {
+            margin-top: 7px;
+            color: #94a3b8;
+            font-size: 0.78rem;
+            line-height: 1.45;
+        }
+        .archive-choice {
+            display: block;
+            min-height: 92px;
+            color: #ffffff;
+            text-decoration: none;
+        }
+        .archive-choice h2 {
+            color: #e9d5ff;
+            font-size: 1rem;
+        }
+        .archive-choice p {
+            margin-top: 8px;
+            color: #94a3b8;
+            font-size: 0.82rem;
+            line-height: 1.5;
+        }
+        .archive-info {
+            grid-column: 1 / -1;
+        }
+        .archive-info p {
+            color: #cbd5e1;
+            line-height: 1.7;
+        }
+        @media (max-width: 700px) {
+            .achievement-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+            .archive-info {
+                grid-column: auto;
+            }
+            .navbar {
+                align-items: flex-start;
+                gap: 16px;
+                flex-direction: column;
+            }
+            .nav-links {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body class="page-layout">
+    <nav class="navbar" aria-label="Main navigation">
+        <div class="brand-lockup">
+            <div class="logo">BTS <span>UNIVERSE</span></div>
+            <div class="brand-tagline">Seven Stars. One Universe. Infinite Stories.</div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="dashboard.html">Dashboard</a></li>
+        </ul>
+    </nav>
+    <header class="hero">
+        <h1 id="achievement-title">13 Years of Achievements</h1>
+        <p id="achievement-description">Explore BTS awards, albums, OT7 milestones, and solo artistry.</p>
+    </header>
+    <main class="achievement-main">
+        <div class="achievement-intro">
+            <div class="metric-highlight">13 Years</div>
+            <p>of achievements through hard work</p>
+        </div>
+        <div class="achievement-grid" id="achievement-grid" aria-label="Achievement categories">
+            <details class="card achievement-panel">
+                <summary class="achievement-panel-summary">Awards</summary>
+                <div class="achievement-panel-content">
+                    <div class="timeline-subsection">
+                    <details class="achievement-category">
+                        <summary>Group Awards</summary>
+                        <div class="achievement-years" aria-label="Group awards by year">
+                            <details class="achievement-year"><summary>2013</summary><div class="achievement-year-content"><p>Selected wins: Melon Music Awards - Best New Artist</p></div></details>
+                            <details class="achievement-year"><summary>2014</summary><div class="achievement-year-content"><p>Selected wins: Golden Disc Awards - New Artist Award; Seoul Music Awards - Rookie of the Year</p></div></details>
+                            <details class="achievement-year"><summary>2015</summary><div class="achievement-year-content"><p>Selected wins: Mnet Asian Music Awards - Best World Performer</p></div></details>
+                            <details class="achievement-year"><summary>2016</summary><div class="achievement-year-content"><p>Selected wins: Melon Music Awards - Top 10 Artists; Mnet Asian Music Awards - Best Dance Performance (Male Group) for Blood Sweat and Tears</p></div></details>
+                            <details class="achievement-year"><summary>2017</summary><div class="achievement-year-content"><p>Selected wins: Billboard Music Awards - Top Social Artist; American Music Awards - Favorite Social Artist; Mnet Asian Music Awards - Artist of the Year</p></div></details>
+                            <details class="achievement-year"><summary>2018</summary><div class="achievement-year-content"><p>Selected wins: Mnet Asian Music Awards - Artist of the Year and Album of the Year; Melon Music Awards - Artist of the Year and Album of the Year</p></div></details>
+                            <details class="achievement-year"><summary>2019</summary><div class="achievement-year-content"><p>Selected wins: Mnet Asian Music Awards - Artist, Album, and Song of the Year; Worldwide Icon of the Year; Melon Music Awards - Artist, Album, Song, and Record of the Year</p></div></details>
+                            <details class="achievement-year"><summary>2020</summary><div class="achievement-year-content"><p>Selected wins: Mnet Asian Music Awards - Artist, Album, and Song of the Year; Worldwide Icon of the Year; Melon Music Awards - Artist, Album, Song, and Record of the Year; American Music Awards - Favorite Duo or Group (Pop/Rock)</p></div></details>
+                            <details class="achievement-year"><summary>2021</summary><div class="achievement-year-content"><p>Selected wins: American Music Awards - Artist of the Year; American Music Awards - Favorite Pop Duo or Group and Favorite Pop Song for Butter</p></div></details>
+                            <details class="achievement-year"><summary>2022</summary><div class="achievement-year-content"><p>Selected wins: Mnet Asian Music Awards - Artist of the Year, Album of the Year, and MAMA Platinum</p></div></details>
+                            <details class="achievement-year"><summary>2023</summary><div class="achievement-year-content"><p>In 2023, each member stepped into new chapters, yet the seven continued to shine as one in the hearts of ARMY. Every song, memory, and promise you shared became its own kind of treasure. BTS, your music still brings us together, and we will always be grateful to walk beside you.</p></div></details>
+                            <details class="achievement-year"><summary>2024</summary><div class="achievement-year-content"><p>In 2024, distance could not dim the light BTS had given the world. ARMY held close every memory and every message, sending strength and affection to each member. Your kindness has always been its own lasting legacy, and we are endlessly proud of all seven.</p></div></details>
+                            <details class="achievement-year"><summary>2025</summary><div class="achievement-year-content"><p>In 2025, seeing all seven members return to one another brought a joy words can barely hold. The care you showed ARMY through every chapter made this reunion even more meaningful. Welcome home, BTS - may the days ahead be full of laughter, music, and the simple happiness of being together.</p></div></details>
+                            <details class="achievement-year"><summary>2026</summary><div class="achievement-year-content"><p>Through November 2026, BTS has earned international, regional, MTV, and fan-voted group awards, including Global Popular Artist, a KM Chart Daesang for Album of the Year, and multiple honors for “SWIM.” More awards are still to come. <a href="achievements/awards/group/2026.html">See the full 2026 awards list</a>.</p></div></details>
+                        </div>
+                    </details>
+                </div>
+                <div class="timeline-subsection">
+                    <details class="achievement-category">
+                        <summary>Solo Awards</summary>
+                        <div class="achievement-years" aria-label="Solo awards by year">
+                            <details class="achievement-year"><summary>2013</summary><div class="achievement-year-content"><p>In 2013, seven young dreamers began a journey that would change countless lives. Before individual spotlights, each member already carried a unique spark that made BTS whole. ARMY will always cherish the courage in those first steps and the beautiful story that began with them.</p></div></details>
+                            <details class="achievement-year"><summary>2014</summary><div class="achievement-year-content"><p>In 2014, the members kept learning, growing, and giving their all side by side. Their different voices and personalities were already precious gifts, each adding a new color to BTS. To every member: you were special long before any trophy could say so.</p></div></details>
+                            <details class="achievement-year"><summary>2015</summary><div class="achievement-year-content"><p>In 2015, the members individual artistry kept blooming within the group they built together. Every small detail - their voices, humor, sincerity, and care - gave ARMY another reason to love them. Your worth has never depended on a stage or an award; it lives in the hearts you have touched.</p></div></details>
+                            <details class="achievement-year"><summary>2016</summary><div class="achievement-year-content"><p>In 2016, seven distinct talents met in every performance and made something greater than the sum of its parts. ARMY saw not only artists, but people who kept reaching for their dreams with open hearts. Thank you for letting us witness each members light grow brighter.</p></div></details>
+                            <details class="achievement-year"><summary>2017</summary><div class="achievement-year-content"><p>In 2017, the world began to notice what ARMY had long known: every member has a light all their own. Yet it is the way those seven lights support one another that makes them unforgettable. We are proud of each individual journey and grateful for the family you remain.</p></div></details>
+                            <details class="achievement-year"><summary>2018</summary><div class="achievement-year-content"><p>In 2018, each member continued to show that strength can be gentle, creativity can be brave, and sincerity can reach across the world. Your individual colors make BTS more beautiful, never less united. ARMY sees you, values you, and is thankful for the person behind every performance.</p></div></details>
+                            <details class="achievement-year"><summary>2019</summary><div class="achievement-year-content"><p>In 2019, every member brought a different feeling and truth to the music, giving ARMY comfort in a thousand ways. Some awards are held in hands; others live in the quiet knowledge that your words helped someone keep going. For us, that connection is beyond measure.</p></div></details>
+                            <details class="achievement-year"><summary>2020</summary><div class="achievement-year-content"><p>In 2020, the members continued to offer comfort and companionship when the world needed it most. Each voice carried its own warmth, and together they made ARMY feel less alone. Thank you for turning difficult days into moments of hope simply by being yourselves.</p></div></details>
+                            <details class="achievement-year"><summary>2021</summary><div class="achievement-year-content"><p>Selected wins: V - Seoul Music Awards Best OST for Sweet Night</p></div></details>
+                            <details class="achievement-year"><summary>2022</summary><div class="achievement-year-content"><p>Selected wins: J-Hope - MAMA Awards Most Popular Male Artist; Jimin and Ha Sung-woon - MAMA Awards Best OST for With You</p></div></details>
+                            <details class="achievement-year"><summary>2023</summary><div class="achievement-year-content"><p>Selected wins: Jimin - MAMA Awards Best Male Artist; Jung Kook - MAMA Awards Best Collaboration for Seven; Jimin - Billboard Music Awards Top Global K-Pop Song for Like Crazy</p></div></details>
+                            <details class="achievement-year"><summary>2024</summary><div class="achievement-year-content"><p>In 2024, each member followed a different path, but none of them had to walk outside the love of ARMY. We kept every song and message close, proud of the people you are as much as the artists you have become. Seven individual lights, forever cherished.</p></div></details>
+                            <details class="achievement-year"><summary>2025</summary><div class="achievement-year-content"><p>In 2025, the members came home to a world that had missed them dearly. ARMY joy was not about a prize or a stage - it was seeing each of you safe, smiling, and reunited. May every member feel how deeply you are loved, exactly as you are.</p></div></details>
+                            <details class="achievement-year"><summary>2026</summary><div class="achievement-year-content"><p>In 2026, every member continues to bring a different kind of magic to BTS and to the world. We celebrate your individual dreams, your shared history, and the kindness that shines through both. No honor could capture what you mean to ARMY; our gratitude is simply here, always.</p></div></details>
+                        </div>
+                    </details>
+                </div>
+                </div>
+            </details>
+            <details class="card achievement-panel">
+                <summary class="achievement-panel-summary">Albums</summary>
+                <div class="achievement-panel-content">
+                    <p class="metric-sub">Yearly Spotify streams and combined YouTube album-track views</p>
+                <details class="achievement-category">
+                    <summary>Explore Albums by Year</summary>
+                    <div class="achievement-years" aria-label="Albums by year">
+                        <details class="achievement-year"><summary>2013</summary><div class="achievement-year-content"><p>Spotify streams: To add<br>YouTube views: To add</p></div></details>
+                        <details class="achievement-year"><summary>2014</summary><div class="achievement-year-content"><p>Spotify streams: To add<br>YouTube views: To add</p></div></details>
+                        <details class="achievement-year"><summary>2015</summary><div class="achievement-year-content"><p>Spotify streams: To add<br>YouTube views: To add</p></div></details>
+                        <details class="achievement-year"><summary>2016</summary><div class="achievement-year-content"><p>Spotify streams: To add<br>YouTube views: To add</p></div></details>
+                        <details class="achievement-year"><summary>2017</summary><div class="achievement-year-content"><p>Spotify streams: To add<br>YouTube views: To add</p></div></details>
+                        <details class="achievement-year"><summary>2018</summary><div class="achievement-year-content"><p>Spotify streams: To add<br>YouTube views: To add</p></div></details>
+                        <details class="achievement-year"><summary>2019</summary><div class="achievement-year-content"><p>Spotify streams: To add<br>YouTube views: To add</p></div></details>
+                        <details class="achievement-year"><summary>2020</summary><div class="achievement-year-content"><p>Spotify streams: To add<br>YouTube views: To add</p></div></details>
+                        <details class="achievement-year"><summary>2021</summary><div class="achievement-year-content"><p>Spotify streams: To add<br>YouTube views: To add</p></div></details>
+                        <details class="achievement-year"><summary>2022</summary><div class="achievement-year-content"><p>Spotify streams: To add<br>YouTube views: To add</p></div></details>
+                        <details class="achievement-year"><summary>2023</summary><div class="achievement-year-content"><p>Spotify streams: To add<br>YouTube views: To add</p></div></details>
+                        <details class="achievement-year"><summary>2024</summary><div class="achievement-year-content"><p>Spotify streams: To add<br>YouTube views: To add</p></div></details>
+                        <details class="achievement-year"><summary>2025</summary><div class="achievement-year-content"><p>Spotify streams: To add<br>YouTube views: To add</p></div></details>
+                        <details class="achievement-year"><summary>2026</summary><div class="achievement-year-content"><p>Spotify streams: To add<br>YouTube views: To add</p></div></details>
+                    </div>
+                </details>
+                </div>
+            </details>
+            <details class="card achievement-panel">
+                <summary class="achievement-panel-summary">OT7 Archive</summary>
+                <div class="achievement-panel-content">
+                    <p class="metric-sub">BTS group album tracks, plus Spotify stream and YouTube view milestones. Catalog scope: original group album tracks and original Japanese songs; excludes solo songs, skits, remixes, OSTs, collaborations, alternate-language versions, and live re-recordings. Streaming counts are snapshots retrieved 5 November 2026 from <a href="https://kworb.net/spotify/artist/3Nrfpe0tUJi4K4DXYWgMUX_songs.html" target="_blank" rel="noopener noreferrer">Kworb Spotify</a> and <a href="https://kworb.net/youtube/artist/bts.html" target="_blank" rel="noopener noreferrer">Kworb YouTube</a>; counts change over time.</p>
+                <details class="achievement-category">
+                    <summary>Explore OT7 Songs by Year</summary>
+                    <div class="achievement-years" aria-label="OT7 group songs by year">
+                        <details class="achievement-year"><summary>2013</summary><div class="achievement-year-content"><p>2 Cool 4 Skool: No More Dream; We Are Bulletproof Pt.2; Like; Path.</p><p>O!RUL8,2?: N.O; We On; If I Ruled the World; Coffee; BTS Cypher Pt.1; Attack on Bangtan; Paldogangsan.</p></div></details>
+                        <details class="achievement-year"><summary>2014</summary><div class="achievement-year-content"><p>Skool Luv Affair: Boy In Luv; Where You From; Just One Day; Tomorrow; BTS Cypher Pt.2; Spine Breaker; Jump.</p><p>Dark &amp; Wild: Danger; War of Hormone; Hip Hop Phile; Let Me Know; Rain; BTS Cypher Pt.3: Killer; Could You Turn Off Your Cell Phone; Embarrassed; 24/7=Heaven; Look Here; So 4 More; Do You Think It Makes Sense.</p><p>Wake Up: Wake Up; The Stars; I Like It Pt.2.</p></div></details>
+                        <details class="achievement-year"><summary>2015</summary><div class="achievement-year-content"><p>The Most Beautiful Moment in Life, Pt.1: I Need U; Hold Me Tight; Dope; Boyz with Fun; Converse High; Moving On; Love Is Not Over.</p><p>The Most Beautiful Moment in Life, Pt.2: Run; Butterfly; Whalien 52; Ma City; Silver Spoon; Autumn Leaves.</p><p>For You (Japanese single).</p></div></details>
+                        <details class="achievement-year"><summary>2016</summary><div class="achievement-year-content"><p>The Most Beautiful Moment in Life: Young Forever: Fire; Save Me; Epilogue: Young Forever.</p><p>Wings: Blood Sweat &amp; Tears; Am I Wrong; 21st Century Girl; 2! 3!.</p><p>Youth: Good Day; Wishing on a Star.</p></div></details>
+                        <details class="achievement-year"><summary>2017</summary><div class="achievement-year-content"><p>You Never Walk Alone: Spring Day; Not Today; A Supplementary Story: You Never Walk Alone.</p><p>Love Yourself: Her: DNA; Best of Me; dimple; Pied Piper; Go Go; Outro: Her.</p><p>Crystal Snow (Japanese single).</p></div></details>
+                        <details class="achievement-year"><summary>2018</summary><div class="achievement-year-content"><p>Love Yourself: Tear: Fake Love; 134340; Paradise; Love Maze; Magic Shop; Airplane Pt.2; Anpanman; So What.</p><p>Love Yourself: Answer: I'm Fine; IDOL; Answer: Love Myself.</p><p>Face Yourself: Don't Leave Me; Let Go.</p></div></details>
+                        <details class="achievement-year"><summary>2019</summary><div class="achievement-year-content"><p>Map of the Soul: Persona: Mikrokosmos; Make It Right; HOME; Jamais Vu; Dionysus.</p><p>Lights (Japanese single).</p></div></details>
+                        <details class="achievement-year"><summary>2020</summary><div class="achievement-year-content"><p>Map of the Soul: 7: Black Swan; Louder than Bombs; ON; UGH!; 00:00 (Zero O'Clock); Friends; Respect; We Are Bulletproof: The Eternal.</p><p>Be: Dynamite; Life Goes On; Fly to My Room; Blue &amp; Grey; Telepathy; Dis-ease; Stay.</p><p>Map of the Soul: 7 – The Journey: Stay Gold; Your Eyes Tell.</p></div></details>
+                        <details class="achievement-year"><summary>2021</summary><div class="achievement-year-content"><p>Butter; Permission to Dance; Film Out.</p></div></details>
+                        <details class="achievement-year"><summary>2022</summary><div class="achievement-year-content"><p>Proof: Yet to Come; Run BTS; For Youth; Born Singer; Quotation Mark; Young Love.</p></div></details>
+                        <details class="achievement-year"><summary>2023</summary><div class="achievement-year-content"><p>No new original group album tracks were released this year. “Take Two” was a standalone single, so it is outside this album-track catalog.</p></div></details>
+                        <details class="achievement-year"><summary>2024</summary><div class="achievement-year-content"><p>No new original group album tracks were released this year. BTS’s solo artistry continued to grow while ARMY held the seven close.</p></div></details>
+                        <details class="achievement-year"><summary>2025</summary><div class="achievement-year-content"><p>No new original group album tracks were released this year; live re-recordings are outside this catalog. The year carried the promise of seven voices finding their way back to one another.</p></div></details>
+                        <details class="achievement-year"><summary>2026</summary><div class="achievement-year-content"><p>Arirang: Swim; Hooligan; Normal; Body to Body; 2.0; FYA; They Don't Know 'Bout Us; Like Animals; Aliens; No. 29; Come Over; Merry Go Round; Please; Into the Sun; One More Night.</p></div></details>
+                    </div>
+                </details>
+                <details class="achievement-category">
+                    <summary>All-time Stream Milestones</summary>
+                    <details class="achievement-category" data-source-url="https://kworb.net/spotify/artist/3Nrfpe0tUJi4K4DXYWgMUX_songs.html">
+                        <summary>Spotify Milestones</summary>
+                        <div class="achievement-years" aria-label="OT7 Spotify stream milestones">
+                            <details class="achievement-year"><summary>100 million</summary><div class="achievement-year-content"><p>100–199 million streams: 134340 (170M); Attack on Bangtan (108M); Autumn Leaves (162M); Born Singer (126M); Boyz with Fun (135M); Coffee (138M); Come Over (191M); Converse High (111M); Crystal Snow (135M); BTS Cypher Pt.3: Killer (127M); Don't Leave Me (170M); Hold Me Tight (173M); Jump (156M); Let Me Know (101M); Let Go (185M); Lost (136M); Ma City (118M); N.O (133M); Outro: Her (133M); Paradise (189M); Respect (110M); Spine Breaker (131M); Tomorrow (120M); War of Hormone (162M); We Are Bulletproof Pt.2 (174M); Whalien 52 (108M); 2! 3! (143M).</p></div></details>
+                            <details class="achievement-year"><summary>200 million</summary><div class="achievement-year-content"><p>200–299 million streams: 21st Century Girl (220M); Answer: Love Myself (232M); BTS Cypher 4 (219M); Danger (261M); Dis-ease (220M); Friends (277M); House of Cards (239M); I'm Fine (238M); Into the Sun (277M); Jamais Vu (281M); Like (248M); Lights (249M); Louder than Bombs (247M); Love Maze (293M); Merry Go Round (285M); No. 29 (213M); No More Dream (264M); One More Night (262M); Outro: Tear (204M); Please (269M); So What (239M); Stay (220M); Stay Gold (282M); Telepathy (268M); UGH! (228M); We Are Bulletproof: The Eternal (287M); Your Eyes Tell (219M).</p></div></details>
+                            <details class="achievement-year"><summary>300 million</summary><div class="achievement-year-content"><p>300–399 million streams: 00:00 (Zero O'Clock) (316M); 2.0 (388M); Best of Me (363M); Blue &amp; Grey (304M); Boy In Luv (359M); Butterfly (353M); Dionysus (338M); FYA (332M); Film Out (303M); Hooligan (394M); Just One Day (319M); Like Animals (322M); Make It Right (392M); MIC Drop (335M); RUN (396M); Silver Spoon (366M); They Don't Know 'Bout Us (328M).</p></div></details>
+                            <details class="achievement-year"><summary>400 million</summary><div class="achievement-year-content"><p>400–499 million streams: Airplane Pt.2 (443M); Anpanman (409M); Body to Body (428M); Burning Up (FIRE) (472M); dimple (464M); Dope (459M); Go Go (446M); HOME (408M); Magic Shop (450M); Mikrokosmos (428M); NORMAL (428M); Pied Piper (484M); Save Me (420M).</p></div></details>
+                            <details class="achievement-year"><summary>500 million</summary><div class="achievement-year-content"><p>500–599 million streams: I Need U (517M).</p></div></details>
+                            <details class="achievement-year"><summary>600 million</summary><div class="achievement-year-content"><p>600–699 million streams: Black Swan (604M); IDOL (629M); Run BTS (675M); Spring Day (682M).</p></div></details>
+                            <details class="achievement-year"><summary>700 million</summary><div class="achievement-year-content"><p>700–799 million streams: Blood Sweat &amp; Tears (749M).</p></div></details>
+                            <details class="achievement-year"><summary>800 million</summary><div class="achievement-year-content"><p>800–899 million streams: DNA (848M); Permission to Dance (840M).</p></div></details>
+                            <details class="achievement-year"><summary>900 million</summary><div class="achievement-year-content"><p>No qualifying group album track is currently in the 900–999 million range.</p></div></details>
+                            <details class="achievement-year"><summary>1–1.5 billion</summary><div class="achievement-year-content"><p>1–1.5 billion streams: Fake Love (1.16B); Life Goes On (1.06B); Swim (1.03B).</p></div></details>
+                            <details class="achievement-year"><summary>1.5–2 billion</summary><div class="achievement-year-content"><p>1.5–2 billion streams: Butter (1.52B).</p></div></details>
+                            <details class="achievement-year"><summary>2 billion+</summary><div class="achievement-year-content"><p>2 billion or more streams: Dynamite (2.38B).</p></div></details>
+                        </div>
+                    </details>
+                    <details class="achievement-category" data-source-url="https://kworb.net/youtube/artist/bts.html">
+                        <summary>YouTube Milestones</summary>
+                        <div class="achievement-years" aria-label="OT7 YouTube view milestones">
+                            <details class="achievement-year"><summary>100 million</summary><div class="achievement-year-content"><p>100–199 million views: For You (109M); Lights (184M); N.O (133M); Run (188M); We Are Bulletproof Pt.2 (180M); We Are Bulletproof: The Eternal (127M).</p></div></details>
+                            <details class="achievement-year"><summary>200 million</summary><div class="achievement-year-content"><p>200–299 million views: Danger (210M); Film Out (244M); I Need U (255M); Just One Day (277M); Yet to Come (232M).</p></div></details>
+                            <details class="achievement-year"><summary>300 million</summary><div class="achievement-year-content"><p>300–399 million views: War of Hormone (358M).</p></div></details>
+                            <details class="achievement-year"><summary>400 million</summary><div class="achievement-year-content"><p>400–499 million views: Boy In Luv (481M).</p></div></details>
+                            <details class="achievement-year"><summary>500 million</summary><div class="achievement-year-content"><p>500–599 million views: Spring Day (579M).</p></div></details>
+                            <details class="achievement-year"><summary>600 million</summary><div class="achievement-year-content"><p>600–699 million views: Black Swan (618M); Not Today (632M); ON — Kinetic Manifesto Film (693M).</p></div></details>
+                            <details class="achievement-year"><summary>700 million</summary><div class="achievement-year-content"><p>700–799 million views: Fire (781M); Permission to Dance (734M).</p></div></details>
+                            <details class="achievement-year"><summary>800 million</summary><div class="achievement-year-content"><p>800–899 million views: Dope (860M); Save Me (831M).</p></div></details>
+                            <details class="achievement-year"><summary>900 million</summary><div class="achievement-year-content"><p>No qualifying group album track is currently in the 900–999 million range.</p></div></details>
+                            <details class="achievement-year"><summary>1–1.5 billion</summary><div class="achievement-year-content"><p>1–1.5 billion views: Blood Sweat &amp; Tears (1.05B); Fake Love (1.41B); IDOL (1.42B); Butter (1.12B).</p></div></details>
+                            <details class="achievement-year"><summary>1.5–2 billion</summary><div class="achievement-year-content"><p>1.5–2 billion views: DNA (1.67B).</p></div></details>
+                            <details class="achievement-year"><summary>2 billion+</summary><div class="achievement-year-content"><p>2 billion or more views: Dynamite (2.16B).</p></div></details>
+                        </div>
+                    </details>
+                </details>
+                </div>
+            </details>
+            <details class="card achievement-panel">
+                <summary class="achievement-panel-summary">SoloVerse</summary>
+                <div class="achievement-panel-content">
+                    <p class="metric-sub">Choose a member, then a year, to explore their solo songs</p>
+                <details class="achievement-category">
+                    <summary>RM</summary>
+                    <div class="achievement-years" aria-label="RM solo songs by year">
+                        <details class="achievement-year"><summary>2013</summary><div class="achievement-year-content"><p>RM songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2014</summary><div class="achievement-year-content"><p>RM songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2015</summary><div class="achievement-year-content"><p>RM songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2016</summary><div class="achievement-year-content"><p>RM songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2017</summary><div class="achievement-year-content"><p>RM songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2018</summary><div class="achievement-year-content"><p>RM songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2019</summary><div class="achievement-year-content"><p>RM songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2020</summary><div class="achievement-year-content"><p>RM songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2021</summary><div class="achievement-year-content"><p>RM songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2022</summary><div class="achievement-year-content"><p>RM songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2023</summary><div class="achievement-year-content"><p>RM songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2024</summary><div class="achievement-year-content"><p>RM songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2025</summary><div class="achievement-year-content"><p>RM songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2026</summary><div class="achievement-year-content"><p>RM songs: To add</p></div></details>
+                    </div>
+                </details>
+                <details class="achievement-category">
+                    <summary>Jin</summary>
+                    <div class="achievement-years" aria-label="Jin solo songs by year">
+                        <details class="achievement-year"><summary>2013</summary><div class="achievement-year-content"><p>Jin songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2014</summary><div class="achievement-year-content"><p>Jin songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2015</summary><div class="achievement-year-content"><p>Jin songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2016</summary><div class="achievement-year-content"><p>Jin songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2017</summary><div class="achievement-year-content"><p>Jin songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2018</summary><div class="achievement-year-content"><p>Jin songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2019</summary><div class="achievement-year-content"><p>Jin songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2020</summary><div class="achievement-year-content"><p>Jin songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2021</summary><div class="achievement-year-content"><p>Jin songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2022</summary><div class="achievement-year-content"><p>Jin songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2023</summary><div class="achievement-year-content"><p>Jin songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2024</summary><div class="achievement-year-content"><p>Jin songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2025</summary><div class="achievement-year-content"><p>Jin songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2026</summary><div class="achievement-year-content"><p>Jin songs: To add</p></div></details>
+                    </div>
+                </details>
+                <details class="achievement-category">
+                    <summary>SUGA</summary>
+                    <div class="achievement-years" aria-label="SUGA solo songs by year">
+                        <details class="achievement-year"><summary>2013</summary><div class="achievement-year-content"><p>SUGA songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2014</summary><div class="achievement-year-content"><p>SUGA songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2015</summary><div class="achievement-year-content"><p>SUGA songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2016</summary><div class="achievement-year-content"><p>SUGA songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2017</summary><div class="achievement-year-content"><p>SUGA songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2018</summary><div class="achievement-year-content"><p>SUGA songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2019</summary><div class="achievement-year-content"><p>SUGA songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2020</summary><div class="achievement-year-content"><p>SUGA songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2021</summary><div class="achievement-year-content"><p>SUGA songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2022</summary><div class="achievement-year-content"><p>SUGA songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2023</summary><div class="achievement-year-content"><p>SUGA songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2024</summary><div class="achievement-year-content"><p>SUGA songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2025</summary><div class="achievement-year-content"><p>SUGA songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2026</summary><div class="achievement-year-content"><p>SUGA songs: To add</p></div></details>
+                    </div>
+                </details>
+                <details class="achievement-category">
+                    <summary>j-hope</summary>
+                    <div class="achievement-years" aria-label="j-hope solo songs by year">
+                        <details class="achievement-year"><summary>2013</summary><div class="achievement-year-content"><p>j-hope songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2014</summary><div class="achievement-year-content"><p>j-hope songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2015</summary><div class="achievement-year-content"><p>j-hope songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2016</summary><div class="achievement-year-content"><p>j-hope songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2017</summary><div class="achievement-year-content"><p>j-hope songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2018</summary><div class="achievement-year-content"><p>j-hope songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2019</summary><div class="achievement-year-content"><p>j-hope songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2020</summary><div class="achievement-year-content"><p>j-hope songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2021</summary><div class="achievement-year-content"><p>j-hope songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2022</summary><div class="achievement-year-content"><p>j-hope songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2023</summary><div class="achievement-year-content"><p>j-hope songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2024</summary><div class="achievement-year-content"><p>j-hope songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2025</summary><div class="achievement-year-content"><p>j-hope songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2026</summary><div class="achievement-year-content"><p>j-hope songs: To add</p></div></details>
+                    </div>
+                </details>
+                <details class="achievement-category">
+                    <summary>Jimin</summary>
+                    <div class="achievement-years" aria-label="Jimin solo songs by year">
+                        <details class="achievement-year"><summary>2013</summary><div class="achievement-year-content"><p>Jimin songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2014</summary><div class="achievement-year-content"><p>Jimin songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2015</summary><div class="achievement-year-content"><p>Jimin songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2016</summary><div class="achievement-year-content"><p>Jimin songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2017</summary><div class="achievement-year-content"><p>Jimin songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2018</summary><div class="achievement-year-content"><p>Jimin songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2019</summary><div class="achievement-year-content"><p>Jimin songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2020</summary><div class="achievement-year-content"><p>Jimin songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2021</summary><div class="achievement-year-content"><p>Jimin songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2022</summary><div class="achievement-year-content"><p>Jimin songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2023</summary><div class="achievement-year-content"><p>Jimin songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2024</summary><div class="achievement-year-content"><p>Jimin songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2025</summary><div class="achievement-year-content"><p>Jimin songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2026</summary><div class="achievement-year-content"><p>Jimin songs: To add</p></div></details>
+                    </div>
+                </details>
+                <details class="achievement-category">
+                    <summary>V</summary>
+                    <div class="achievement-years" aria-label="V solo songs by year">
+                        <details class="achievement-year"><summary>2013</summary><div class="achievement-year-content"><p>V songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2014</summary><div class="achievement-year-content"><p>V songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2015</summary><div class="achievement-year-content"><p>V songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2016</summary><div class="achievement-year-content"><p>V songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2017</summary><div class="achievement-year-content"><p>V songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2018</summary><div class="achievement-year-content"><p>V songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2019</summary><div class="achievement-year-content"><p>V songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2020</summary><div class="achievement-year-content"><p>V songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2021</summary><div class="achievement-year-content"><p>V songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2022</summary><div class="achievement-year-content"><p>V songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2023</summary><div class="achievement-year-content"><p>V songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2024</summary><div class="achievement-year-content"><p>V songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2025</summary><div class="achievement-year-content"><p>V songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2026</summary><div class="achievement-year-content"><p>V songs: To add</p></div></details>
+                    </div>
+                </details>
+                <details class="achievement-category">
+                    <summary>Jung Kook</summary>
+                    <div class="achievement-years" aria-label="Jung Kook solo songs by year">
+                        <details class="achievement-year"><summary>2013</summary><div class="achievement-year-content"><p>Jung Kook songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2014</summary><div class="achievement-year-content"><p>Jung Kook songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2015</summary><div class="achievement-year-content"><p>Jung Kook songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2016</summary><div class="achievement-year-content"><p>Jung Kook songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2017</summary><div class="achievement-year-content"><p>Jung Kook songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2018</summary><div class="achievement-year-content"><p>Jung Kook songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2019</summary><div class="achievement-year-content"><p>Jung Kook songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2020</summary><div class="achievement-year-content"><p>Jung Kook songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2021</summary><div class="achievement-year-content"><p>Jung Kook songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2022</summary><div class="achievement-year-content"><p>Jung Kook songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2023</summary><div class="achievement-year-content"><p>Jung Kook songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2024</summary><div class="achievement-year-content"><p>Jung Kook songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2025</summary><div class="achievement-year-content"><p>Jung Kook songs: To add</p></div></details>
+                        <details class="achievement-year"><summary>2026</summary><div class="achievement-year-content"><p>Jung Kook songs: To add</p></div></details>
+                    </div>
+                </details>
+                </div>
+            </details>
+        </div>
+    </main>
+    <div class="page-back">
+        <a class="back-button" href="index.html" data-back-button aria-label="Go back to the previous page">← Back</a>
+    </div>
+    <script>
+        document.querySelector('[data-back-button]').addEventListener('click', (event) => {
+            if (window.history.length > 1) {
+                event.preventDefault();
+                window.history.back();
+            }
+        });
+
+        const grid = document.getElementById('achievement-grid');
+        const title = document.getElementById('achievement-title');
+        const description = document.getElementById('achievement-description');
+        const intro = document.querySelector('.achievement-intro');
+        const panels = Array.from(grid.children);
+        const query = new URLSearchParams(window.location.search);
+        const rawPath = query.get('path');
+        const invalidPath = query.has('path') && !/^\d+(,\d+)*$/.test(rawPath || '');
+        const path = rawPath && !invalidPath ? rawPath.split(',').map(Number) : [];
+
+        function getNestedChoices(container) {
+            return Array.from(container.querySelectorAll('details')).filter((choice) =>
+                choice.parentElement.closest('details') === container
+            );
+        }
+
+        function addChoice(label, href, supportingText) {
+            const link = document.createElement('a');
+            link.className = 'card archive-choice';
+            link.href = href;
+
+            const heading = document.createElement('h2');
+            heading.textContent = label;
+            link.append(heading);
+
+            if (supportingText) {
+                const text = document.createElement('p');
+                text.textContent = supportingText;
+                link.append(text);
+            }
+
+            grid.append(link);
+        }
+
+        function showPageError(message) {
+            title.textContent = 'Page not found';
+            description.textContent = message;
+            intro.hidden = true;
+            grid.replaceChildren();
+        }
+
+        if (invalidPath || path.some((step) => !Number.isInteger(step) || step < 0)) {
+            showPageError('This archive link is not valid. Use the Back button to return.');
+        } else {
+            let current = null;
+
+            if (path.length > 0) {
+                const selectedPanel = panels[path[0]];
+                if (!selectedPanel) {
+                    showPageError('This archive category could not be found. Use the Back button to return.');
+                } else {
+                    current = selectedPanel;
+                    for (const step of path.slice(1)) {
+                        const choices = getNestedChoices(current);
+                        current = choices[step];
+                        if (!current) break;
+                    }
+                    if (!current) {
+                        showPageError('This archive option could not be found. Use the Back button to return.');
+                    }
+                }
+            }
+
+            if (path.length === 0 || current) {
+                intro.hidden = path.length > 0;
+                grid.replaceChildren();
+
+                if (path.length === 0) {
+                    title.textContent = '13 Years of Achievements';
+                    description.textContent = 'Explore BTS awards, albums, OT7 milestones, and solo artistry.';
+                    const categoryPages = [
+                        'achievements/awards/index.html',
+                        'achievements/albums/index.html'
+                    ];
+                    panels.forEach((panel, index) => {
+                        addChoice(
+                            panel.querySelector(':scope > summary').textContent.trim(),
+                            categoryPages[index] || `achievements.html?path=${index}`,
+                            'Open this archive'
+                        );
+                    });
+                } else {
+                    const selectedLabel = current.querySelector(':scope > summary').textContent.trim();
+                    title.textContent = selectedLabel;
+                    description.textContent = path.length === 1
+                        ? 'Choose an option to continue exploring this archive.'
+                        : `Explore ${selectedLabel}.`;
+
+                    const choices = getNestedChoices(current);
+                    if (choices.length > 0) {
+                        choices.forEach((choice, index) => {
+                            addChoice(
+                                choice.querySelector(':scope > summary').textContent.trim(),
+                                `achievements.html?path=${path.concat(index).join(',')}`,
+                                ''
+                            );
+                        });
+                    } else {
+                        const info = current.querySelector('.achievement-year-content');
+                        const infoCard = document.createElement('section');
+                        infoCard.className = 'card archive-info';
+                        const infoText = document.createElement('p');
+                        infoText.textContent = info ? info.textContent.trim() : 'No information has been added yet.';
+                        infoCard.append(infoText);
+                        grid.append(infoCard);
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

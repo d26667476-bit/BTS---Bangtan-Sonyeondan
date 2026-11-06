@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A gentle space to remember ARMY members and share their stories and letters to BTS.">
+    <title>Until We Meet in Another Purple Universe | BTS Universe</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .memorial-content {
+            width: min(100% - 12%, 1000px);
+            margin: 0 auto;
+            padding-bottom: 48px;
+        }
+
+        .falling-petals {
+            position: fixed;
+            inset: 0;
+            z-index: 1;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .falling-petals span {
+            position: absolute;
+            top: -40px;
+            color: #d8b4fe;
+            font-size: 19px;
+            opacity: 0;
+            animation: petal-fall 18s linear infinite;
+        }
+
+        .falling-petals span:nth-child(1) { left: 7%; animation-delay: 0s; }
+        .falling-petals span:nth-child(2) { left: 18%; animation-delay: 5s; color: #f0abfc; }
+        .falling-petals span:nth-child(3) { left: 31%; animation-delay: 11s; }
+        .falling-petals span:nth-child(4) { left: 44%; animation-delay: 3s; color: #e9d5ff; }
+        .falling-petals span:nth-child(5) { left: 57%; animation-delay: 14s; }
+        .falling-petals span:nth-child(6) { left: 69%; animation-delay: 8s; color: #f0abfc; }
+        .falling-petals span:nth-child(7) { left: 82%; animation-delay: 1s; }
+        .falling-petals span:nth-child(8) { left: 94%; animation-delay: 10s; color: #e9d5ff; }
+
+        @keyframes petal-fall {
+            0% {
+                opacity: 0;
+                transform: translate3d(0, -5vh, 0) rotate(0deg);
+            }
+            10% { opacity: 0.4; }
+            90% { opacity: 0.25; }
+            100% {
+                opacity: 0;
+                transform: translate3d(55px, 110vh, 0) rotate(300deg);
+            }
+        }
+
+        .army-memory {
+            position: relative;
+            overflow: hidden;
+            isolation: isolate;
+            padding: 0;
+            border: 1px solid rgba(192, 132, 252, 0.35);
+            background:
+                radial-gradient(ellipse at top left, rgba(139, 92, 246, 0.12), transparent 38%),
+                rgba(11, 7, 23, 0.72);
+            box-shadow: inset 0 0 35px rgba(139, 92, 246, 0.06);
+        }
+
+        .army-memory::before {
+            position: absolute;
+            z-index: 1;
+            inset: 0;
+            background: url("../assets/border-flower-pastel-frame.png") center / 100% 100% no-repeat;
+            content: "";
+            pointer-events: none;
+        }
+
+        .army-memory + .army-memory {
+            margin-top: 28px;
+        }
+
+        .army-memory-content {
+            position: relative;
+            z-index: 2;
+            margin: clamp(32px, 10vw, 104px);
+            border: 1px solid rgba(192, 132, 252, 0.18);
+            border-radius: 14px;
+            padding: clamp(24px, 4vw, 40px);
+            background: rgba(11, 7, 23, 0.96);
+        }
+
+        .army-memory h2 {
+            margin: 0 0 12px;
+            color: #fff;
+        }
+
+        .army-memory h3 {
+            margin: 24px 0 12px;
+            color: #e9d5ff;
+            font-size: 1rem;
+        }
+
+        .army-memory p {
+            margin: 0 0 14px;
+            color: #cbd5e1;
+            line-height: 1.8;
+        }
+
+        .army-memory p:last-child {
+            margin-bottom: 0;
+        }
+
+        .zahra-photo {
+            display: block;
+            width: min(100%, 520px);
+            height: auto;
+            margin: 24px auto;
+            border: 1px solid rgba(192, 132, 252, 0.35);
+            border-radius: 12px;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+        }
+
+        .memorial-closing {
+            margin-top: 28px !important;
+            color: #e9d5ff !important;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .falling-petals {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body class="page-layout">
+    <div class="falling-petals" aria-hidden="true">
+        <span>✿</span><span>❀</span><span>✿</span><span>❀</span>
+        <span>✿</span><span>❀</span><span>✿</span><span>❀</span>
+    </div>
+    <nav class="navbar" aria-label="Main navigation">
+        <div class="brand-lockup">
+            <div class="logo">BTS <span>UNIVERSE</span></div>
+            <div class="brand-tagline">Seven Stars. One Universe. Infinite Stories.</div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../dashboard.html">Dashboard</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <h1>Until We Meet in Another Purple Universe</h1>
+        <p>A gentle space to remember ARMYs and the stories, dreams, and love they leave with us.</p>
+    </header>
+
+    <main class="memorial-content">
+        <section class="memorial-entries" aria-label="Memorial stories and letters">
+            <article class="card army-memory" aria-labelledby="zahra-title">
+                <div class="army-memory-content">
+                    <h2 id="zahra-title">Remembering Zahra</h2>
+                    <p>Zahra was an ARMY from Iran who loved BTS, especially Taehyung. She faced a difficult heart condition, and her words carried so much love and courage.</p>
+                    <img class="zahra-photo" src="../assets/Zahra%20an%20army.jpg" alt="Zahra's final message for Taehyung, shared in her memory">
+                    <h3>For Zahra</h3>
+                    <p>Zahra, your love reached toward the music and the person who brought you comfort. Your words are full of tenderness, and your place in this purple universe will be remembered with care.</p>
+                    <p>Thank you for sharing a piece of your heart with BTS and with ARMY. May your memory be held gently, with all the warmth and kindness you deserve.</p>
+                    <p class="memorial-closing">Until we meet in another purple universe, Zahra. Rest gently, surrounded by love.</p>
+                </div>
+            </article>
+        </section>
+        <div class="page-back">
+            <a class="back-button" href="../dashboard.html">← Back to Dashboard</a>
+        </div>
+    </main>
+</body>
+</html>

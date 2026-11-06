@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Choose a BTS group or solo streaming goal.">
+    <title>Choose a Streaming Goal | BTS Universe</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/streaming-goals.css">
+    <script src="streaming-goals.js" defer></script>
+</head>
+<body class="page-layout" data-streaming-page="options">
+    <nav class="navbar" aria-label="Main navigation">
+        <div class="brand-lockup">
+            <div class="logo">BTS <span>UNIVERSE</span></div>
+            <div class="brand-tagline">Seven Stars. One Universe. Infinite Stories.</div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../dashboard.html">Dashboard</a></li>
+            <li><a href="../streaming-goals.html" class="active" aria-current="page">Streaming Goals</a></li>
+        </ul>
+    </nav>
+    <header class="hero">
+        <h1 id="goal-heading">Choose a Streaming Goal</h1>
+        <p id="goal-description">Choose Seven Souls or Solo Frequency for this milestone.</p>
+    </header>
+    <main class="streaming-main">
+        <p id="goal-error" class="streaming-status" role="alert" hidden></p>
+        <section class="streaming-grid" aria-label="Streaming goal types">
+            <a class="card streaming-card" data-goal-type="seven-souls" href="seven-souls.html">
+                <h2>Seven Souls</h2>
+                <p>Explore BTS group streaming goals for this milestone.</p>
+                <span class="streaming-card-link">Explore Seven Souls <span aria-hidden="true">→</span></span>
+            </a>
+            <a class="card streaming-card" data-goal-type="solo-frequency" href="solo-members.html">
+                <h2>Solo Frequency</h2>
+                <p>Explore solo streaming goals for this milestone.</p>
+                <span class="streaming-card-link">Explore Solo Frequency <span aria-hidden="true">→</span></span>
+            </a>
+        </section>
+        <div class="page-back">
+            <a class="back-button" id="milestones-back" href="youtube/index.html">← Back to milestones</a>
+        </div>
+    </main>
+</body>
+</html>

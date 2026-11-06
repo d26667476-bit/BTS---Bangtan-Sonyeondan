@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Meet all seven BTS members and explore their full profiles.">
+    <title>Meet the Seven Stars | BTS Universe</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .members-main {
+            width: min(100%, 1100px);
+            margin: 0 auto;
+            padding: 24px 6% 60px;
+        }
+
+        .members-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .member-card {
+            display: grid;
+            grid-template-columns: 112px minmax(0, 1fr);
+            align-items: center;
+            gap: 20px;
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .member-card:focus-visible {
+            outline: 2px solid #c084fc;
+            outline-offset: 4px;
+        }
+
+        .member-card img {
+            width: 112px;
+            height: 112px;
+            border-radius: 14px;
+            object-fit: cover;
+            border: 1px solid rgba(192, 132, 252, 0.45);
+        }
+
+        .member-card h2 {
+            margin-bottom: 5px;
+            color: #ffffff;
+            font-size: 1.1rem;
+        }
+
+        .member-card p {
+            color: #c084fc;
+            font-size: 0.9rem;
+        }
+
+        .member-card span {
+            display: inline-block;
+            margin-top: 12px;
+            color: #94a3b8;
+            font-size: 0.82rem;
+        }
+
+        @media (max-width: 700px) {
+            .navbar {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+            }
+
+            .members-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .member-card {
+                grid-template-columns: 88px minmax(0, 1fr);
+                gap: 16px;
+            }
+
+            .member-card img {
+                width: 88px;
+                height: 88px;
+            }
+        }
+    </style>
+</head>
+<body class="page-layout">
+    <nav class="navbar" aria-label="Main navigation">
+        <div class="brand-lockup">
+            <div class="logo">BTS <span>UNIVERSE</span></div>
+            <div class="brand-tagline">Seven Stars. One Universe. Infinite Stories.</div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="members2.html" class="active" aria-current="page">MEET THE SEVEN STARS</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <h1>MEET THE SEVEN STARS</h1>
+        <p>Select a member to explore their complete profile.</p>
+    </header>
+
+    <main class="members-main">
+        <section class="members-grid" aria-label="BTS member profiles">
+            <a class="card member-card" href="members/jin.html">
+                <img src="assets/jin.jpg" alt="Jin">
+                <div><h2>Jin</h2><p>Kim Seok-jin (김석진)</p><span>Explore profile →</span></div>
+            </a>
+            <a class="card member-card" href="members/suga.html">
+                <img src="assets/suga.jpg" alt="SUGA">
+                <div><h2>SUGA</h2><p>Min Yoon-gi (민윤기)</p><span>Explore profile →</span></div>
+            </a>
+            <a class="card member-card" href="members/jhope.html">
+                <img src="assets/jhope.jpg" alt="j-hope">
+                <div><h2>j-hope</h2><p>Jung Ho-seok (정호석)</p><span>Explore profile →</span></div>
+            </a>
+            <a class="card member-card" href="members/rm.html">
+                <img src="assets/rm.jpg" alt="RM">
+                <div><h2>RM</h2><p>Kim Nam-joon (김남준)</p><span>Explore profile →</span></div>
+            </a>
+            <a class="card member-card" href="members/jimin.html">
+                <img src="assets/jimin.jpg" alt="Jimin">
+                <div><h2>Jimin</h2><p>Park Ji-min (박지민)</p><span>Explore profile →</span></div>
+            </a>
+            <a class="card member-card" href="members/v.html">
+                <img src="assets/taehyung.jpg" alt="V">
+                <div><h2>V</h2><p>Kim Tae-hyung (김태형)</p><span>Explore profile →</span></div>
+            </a>
+            <a class="card member-card" href="members/jungkook.html">
+                <img src="assets/jumgkook.jpg" alt="Jungkook">
+                <div><h2>Jungkook</h2><p>Jeon Jung-kook (전정국)</p><span>Explore profile →</span></div>
+            </a>
+        </section>
+        <div class="page-back">
+            <a class="back-button" href="dashboard.html">← Back to Dashboard</a>
+        </div>
+    </main>
+</body>
+</html>
